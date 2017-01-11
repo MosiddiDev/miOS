@@ -2,16 +2,20 @@ import React from 'react';
 import Router from 'react-router';
 var {DefaultRoute, Route} = Router;
 
-import AppHeader from './Components/Header';
+import AppViewScreen from './Components/Screen';
 
 // Views
-import Home from './Views/Home';
-import About from './Views/About';
+import Terminal from './Views/Terminal';
+// import Home from './Views/Home';
+// import About from './Views/About';
+// import Contact from './Views/Contact';
 
+
+// <Route path="about" component={About}/>
+// <Route path="contact" component={Contact}/>
 var routes = (
-  <Route name="app" path="/" handler={AppHeader}>
-    <Route name="about" handler={About}/>
-    <DefaultRoute handler={Home}/>
+  <Route path="/" component={AppViewScreen}>
+    <IndexRoute component={Terminal} />
   </Route>
 );
 

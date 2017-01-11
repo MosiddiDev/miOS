@@ -15,10 +15,10 @@
     outline: 1px solid lightgray;
 }
 
-.rc-view{
-    width: 700px;
+.app-view{
+    height: 80%;
     min-height: 500px;
-    /*margin: 150px auto;*/
+    max-height: 100%;
     margin: 0 auto;
     padding: 10px;
     outline: 1px solid lightgray;
@@ -30,4 +30,34 @@
 .rc-view p{
     margin-left: 50px;
     text-align: left;
+}
+
+
+
+
+/*only main terminal should be full screen, not ones from inside gui*/
+.terminal{
+    position: relative;
+    height: 100%;
+    width: 100%;
+}
+
+.terminal-input{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	background: -webkit-linear-gradient(black, gray) !important; /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(black, gray) !important; /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(black, gray) !important; /* For Firefox 3.6 to 15 */
+	background: linear-gradient(black, gray) !important; /* Standard syntax (must be last) */
+	-moz-box-shadow: 0px 0px 7px #000 !important;
+	-webkit-box-shadow: 0px 0px 7px #000 !important;
+ 	box-shadow: 0px 0px 7px #000 !important;
+	/*border-radius: 5px !important;*/
+	border: none !important;
+	resize: none !important;
+	color: white !important;
 }

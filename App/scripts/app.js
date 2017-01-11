@@ -1,6 +1,6 @@
 import React from 'react';
-import Router from 'react-router';
-var {DefaultRoute, Route} = Router;
+import ReactDOM from 'react-dom';
+import { IndexRoute, Router, Route, browserHistory} from 'react-router';
 
 import AppViewScreen from './Components/Screen';
 
@@ -14,9 +14,11 @@ import Terminal from './Views/Terminal';
 // <Route path="about" component={About}/>
 // <Route path="contact" component={Contact}/>
 var routes = (
-  <Route path="/" component={AppViewScreen}>
-    <IndexRoute component={Terminal} />
-  </Route>
+    <Router history={browserHistory}>
+        <Route path="/" component={AppViewScreen}>
+            <IndexRoute component={Terminal} />
+        </Route>
+    </Router>
 );
 
-Router.run(routes, (Handler) => React.render(<Handler /> , document.body));
+ReactDOM.render(routes, document.body);
